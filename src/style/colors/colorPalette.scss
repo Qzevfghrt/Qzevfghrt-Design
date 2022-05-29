@@ -1,0 +1,16 @@
+@import 'colors';
+
+@function colorPalette($color, $depth: 0, $mixColor: $white-base) {
+
+  @if ($color == $purple-100) {
+
+    @return mix($purple-mix-base, $mixColor, (10 - $depth) * 10%);
+  }
+  @else if ($color == $white-base) {
+
+    @return mix($white-base, transparent, (10 - $depth) * 10%);
+  } @else {
+
+    @return mix($color, $mixColor, (10 - $depth) * 10%);
+  }
+}

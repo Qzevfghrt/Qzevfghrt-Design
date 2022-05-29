@@ -1,0 +1,28 @@
+@import '../../style/index';
+@import '../../style/themes/default';
+
+$tag-prefix: #{$graviti-prefix}-tag;
+
+$tag-colors: (
+  'purple': $primary-100,
+  'cyan': $secondary-100,
+  'blue': $info-100,
+  'success': $success-100,
+  'error': $danger-100,
+  'warning': $warning-100,
+  'black': $black,
+  'gray': $gray-300,
+);
+
+$tag-size-styles: (
+  md: (
+    text-size: 12,
+    font-weight: $font-medium,
+    height: 24px,
+  ),
+  sm: (
+    text-size: 10,
+    font-weight: $font-medium,
+    height: 20px,
+  ),
+);

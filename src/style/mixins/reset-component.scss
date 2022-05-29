@@ -1,0 +1,11 @@
+@import '../themes/default';
+@import 'typography';
+
+@mixin reset-component() {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  list-style: none;
+  @include text(14);
+}

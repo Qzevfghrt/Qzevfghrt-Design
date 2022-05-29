@@ -1,0 +1,66 @@
+@import 'variables';
+@import './mixin';
+
+.#{$tag-prefix} {
+  @include tag;
+
+  @each $size, $props in $tag-size-styles {
+    &-#{$size} {
+      @include text(map-get($props, text-size), map-get($props, font-weight));
+
+      height: map-get($props, height);
+
+      @if $size == 'sm' {
+        padding: 0 4px;
+        & .#{$tag-prefix}-text {
+          transform: scale(0.83);
+        }
+      }
+    }
+  }
+
+  &-filled {
+
+    @each $name, $color in $tag-colors {
+      &.#{$tag-prefix}-#{$name} {
+        @include tag-variant-filled($color);
+      }
+    }
+  }
+
+  &-light {
+
+    @each $name, $color in $tag-colors {
+      &.#{$tag-prefix}-#{$name} {
+        @include tag-variant-light($color);
+      }
+    }
+  }
+
+  &-outlined {
+
+    @each $name, $color in $tag-colors {
+      &.#{$tag-prefix}-#{$name} {
+        @include tag-variant-outlined($color);
+      }
+    }
+  }
+
+  &-stroked {
+
+    @each $name, $color in $tag-colors {
+      &.#{$tag-prefix}-#{$name} {
+        @include tag-variant-stroked($color);
+      }
+    }
+  }
+
+  &-close-icon:hover {
+    cursor: pointer;
+  }
+
+  > .#{$iconfont-prefix} + span,
+  > span + .#{$iconfont-prefix}, &-close-icon {
+    margin-left: 4px;
+  }
+}
