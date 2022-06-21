@@ -1,6 +1,0 @@
-@import '../themes/default';
-@mixin text($size, $weight: $font-medium) {
-  font-size: map-get($font-size, $size);
-  line-height: map-get($line-height, $size);
-  font-weight: $weight;
-}
